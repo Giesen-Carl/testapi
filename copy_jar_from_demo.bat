@@ -1,2 +1,3 @@
 @echo off
-copy ..\demo\target\*.jar app.jar
+robocopy ..\demo\target\ . *.jar
+ren *.jar app.jar
