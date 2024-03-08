@@ -1,9 +1,12 @@
-FROM eclipse-temurin:17
+# Use a minimal base image with Java 17
+FROM openjdk:17-jdk-alpine
 
-WORKDIR /opt/app
+# Set the working directory
+WORKDIR /app
 
-COPY app.jar /opt/app/app.jar
+# Copy the application JAR file into the container
+COPY app.jar /app/
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "/opt/app/app.jar"]
+CMD ["java", "-jar", "app.jar"]
